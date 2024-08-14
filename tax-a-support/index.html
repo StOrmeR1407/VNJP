@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-
+    
 </head>
 <body>
     <header>
@@ -15,7 +16,7 @@
                         <img class="nav_logo" src="img/nav_logo.png">
                     </a>
                 </div>
-                <div class="nav_header">
+                <div class="nav_header" id="nav_header">
                     <a class="nav-link blue-primary ">サービス</a>
                     <a class="nav-link blue-primary ">料金プラン</a>
                     <a class="nav-link blue-primary ">Q & A</a>
@@ -23,47 +24,43 @@
                 <div class="nav_button">                
                         詳しい資料を見る
                 </div>
+                <div class="nav-toggle" id="navToggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </div>
         </div>
     </header>
 
     <section class="introduce">
+        <img class="introduce_img" src="img/introduce_img.png">
+        <img class="introduce_talk" src="img/introduce_talk.png">
         <div class="container-secondary">
-            <img classs="introduce" src="">
-            <img>
-            <div class="introduce_talk">
-
-            </div>
             <div class="introduce_header">
-                <div class="introduce_header-text1">開業準備で忙しい</div>
-                <div class="introduce_header-text2">あなたをサポート！</div>
+                <p class="introduce_header-yellow">開業準備で忙しい</p>
+                <p class="introduce_header-white">あなたをサポート！</p>
             </div>
             <div class="introduce_list">
-                <div class="introduce_list1">
-                    <div class="introduce_item">
-                        <img src="img/introduce_item1.png" class="introduce_item-img">
-                        <div class="introduce_item-content">ロゴマーク</div>
-                    </div>
-                    <div class="introduce_item">
-                        <img src="img/introduce_item2.png" class="introduce_item-img">
-                        <div class="introduce_item-content">名 刺</div>
-                    </div>
-                    <div class="introduce_item">
-                        <img src="img/introduce_item3.png" class="introduce_item-img">
-                        <div class="introduce_item-content">パンフレット</div>
-                    </div>
+                <div class="introduce_item">
+                    <img src="img/introduce_item1.png" class="introduce_item-img">
+                    <p class="introduce_item-content">ロゴマーク</p>
                 </div>
-                <div class="introduce_list2">
-                    <div class="introduce_item">
-                        <img src="img/introduce_item4.png" class="introduce_item-img">
-                        <div class="introduce_item-content">メールアドレス       
-                        </div>
-                    </div>
-                    <div class="introduce_item">
-                        <img src="img/introduce_item5.png" class="introduce_item-img">
-                        <div class="introduce_item-content">ホームページ
-                        </div>
-                    </div>
+                <div class="introduce_item">
+                    <img src="img/introduce_item2.png" class="introduce_item-img">
+                    <p class="introduce_item-content">名 刺</p>
+                </div>
+                <div class="introduce_item">
+                    <img src="img/introduce_item3.png" class="introduce_item-img">
+                    <p class="introduce_item-content">パンフレット</p>
+                </div>
+                <div class="introduce_item">
+                    <img src="img/introduce_item4.png" class="introduce_item-img">
+                    <p class="introduce_item-content">メールアドレス </p>
+                </div>
+                <div class="introduce_item">
+                    <img src="img/introduce_item5.png" class="introduce_item-img">
+                    <p class="introduce_item-content">ホームページ </p>
                 </div>
             </div>
 
@@ -81,32 +78,42 @@
             <div class="problem_list">
                 <div class="problem_item">
                     <img class="problem_item-image" src="img/ticker.png" alt="">
-                    <div class="problem_item-yellow">開業の準備 </div>
-                    <div class="problem_item-white">に追われて、名刺の発注すらできてない</div>
+                    <div class="content">
+                        <div class="problem_item-yellow">開業の準備 </div>
+                        <div class="problem_item-white">に追われて、名刺の発注すらできてない</div>
+                    </div>                   
                 </div>
                 <div class="problem_item">
                     <img class="problem_item-image" src="img/ticker.png" alt="">
-                    <div class="problem_item-white">販促ツールの</div>
-                    <div class="problem_item-yellow">初期費用</div>
-                    <div class="problem_item-white">はできるだけ</div>
-                    <div class="problem_item-yellow">抑えたい</div>
+                    <div class="content">
+                        <div class="problem_item-white">販促ツールの</div>
+                        <div class="problem_item-yellow">初期費用</div>
+                        <div class="problem_item-white">はできるだけ</div>
+                        <div class="problem_item-yellow">抑えたい</div>
+                    </div>
                 </div>
                 <div class="problem_item">
                     <img class="problem_item-image" src="img/ticker.png" alt="">
-                    <div class="problem_item-yellow">デザインのことは専門外</div>
-                    <div class="problem_item-white">で発注の仕方すらわからない</div>
+                    <div class="content">
+                        <div class="problem_item-yellow">デザインのことは専門外</div>
+                        <div class="problem_item-white">で発注の仕方すらわからない</div>
+                    </div>
                 </div>
                 <div class="problem_item">
                     <img class="problem_item-image" src="img/ticker.png" alt="">
-                    <div class="problem_item-white">今どき</div>
-                    <div class="problem_item-yellow">ホームページは必須</div>
-                    <div class="problem_item-white">だと思うが、どう準備すれば。。。</div>
+                    <div class="content">
+                        <div class="problem_item-white">今どき</div>
+                        <div class="problem_item-yellow">ホームページは必須</div>
+                        <div class="problem_item-white">だと思うが、どう準備すれば。。。</div>
+                    </div>
                 </div>
                 <div class="problem_item">
                     <img class="problem_item-image" src="img/ticker.png" alt="">
-                    <div class="problem_item-white">できれば</div>
-                    <div class="problem_item-yellow">まとめて用意</div>
-                    <div class="problem_item-white">してくれるのが一番助かる</div>
+                    <div class="content">
+                        <div class="problem_item-white">できれば</div>
+                        <div class="problem_item-yellow">まとめて用意</div>
+                        <div class="problem_item-white">してくれるのが一番助かる</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,9 +121,10 @@
 
     <section class="solution">
         <div class="solution_header">
-            <span>「税理士サポート.com 」 <p>なら</p> </span> 
-            
-            <p>開業時に必要なツールを全て準備します！</p>
+            <div class="content">
+                <p class="top"><span>「</span>税理士サポート.com<span>」</span>なら</p>
+                <p>開業時に必要なツールを全て準備します！</p>
+            </div>
         </div>
         <div class="container">
             <div class="solution_list">
@@ -232,29 +240,28 @@
             <div class="pricing_warning-under">
                 しかも・・・
             </div>
-            
-            <div class="pricing_talk">
-                <img class="pricing_talk-bg" src="img/pricing_img1.png">
-                <div class="pricing_talk-item talk-item1">
-                    <div>印刷費用</div>
-                </div>
-                <div class="pricing_talk-item talk-item2">
-                    <div>ドメイン 取得・更新</div>
-                </div>
-                <div class="pricing_talk-item talk-item3">
-                    <div>WordPress <br> 導入</div>
-                </div>
-                <div class="pricing_talk-item talk-item4">
-                    <div>入稿対応</div>
-                </div>
-                <div class="pricing_talk-item talk-item5">
-                    <div>レンタル
-                        サーバー契約</div>
-                </div>
-                <div class="pricing_talk-item talk-item6">
-                    <div>ホームページ <br>
-                        設置</div>
-                </div>
+        </div>   
+        <div class="pricing_talk">
+            <img class="pricing_talk-bg" src="img/pricing_img1.png">
+            <div class="pricing_talk-item talk-item1">
+                <div>印刷費用</div>
+            </div>
+            <div class="pricing_talk-item talk-item2">
+                <div>ドメイン 取得・更新</div>
+            </div>
+            <div class="pricing_talk-item talk-item3">
+                <div>WordPress <br> 導入</div>
+            </div>
+            <div class="pricing_talk-item talk-item4">
+                <div>入稿対応</div>
+            </div>
+            <div class="pricing_talk-item talk-item5">
+                <div>レンタル
+                    サーバー契約</div>
+            </div>
+            <div class="pricing_talk-item talk-item6">
+                <div>ホームページ <br>
+                    設置</div>
             </div>
         </div>
     </section>
@@ -267,15 +274,17 @@
 
     <section class="hotdeal">
         <div class="hotdeal_header">
-            <div class="hotdeal_header-line1">
-                <div class="hotdeal_header1">でも、ご安心ください！</div>
-            </div>
-            <div class="hotdeal_header-line2">
-                <div class="hotdeal_header2">「</div>
-                <div class="hotdeal_header3">税理士サポート.com</div>
-                <div class="hotdeal_header2">」</div>
-                <div class="hotdeal_header1">なら</div>
-            </div>               
+            <div class="content">
+                <div class="hotdeal_header-top">
+                    <p>でも、ご安心ください！</p>
+                </div>
+                <div class="hotdeal_header-bottom">
+                    <span>「</span>
+                    <b>税理士サポート.com</b>
+                    <span >」</span>
+                    <p>なら</p>
+                </div> 
+            </div>           
         </div>
         <div class="container">         
             <div class="hotdeal_description">
@@ -291,19 +300,23 @@
                 </div>
             </div>
             <div class="hotdeal_detail">
-                <div class="hotdeal_detail-line1">
-                    <div class="hotdeal_detail-line11">初月</div>
-                    <div class="hotdeal_detail-line12">148,000</div>
-                    <div class="hotdeal_detail-line11">円</div>
-                    <div class="hotdeal_detail-line13">(税抜)</div>           
+                <div class="hotdeal_detail-top">
+                    <p >初月</p>
+                    <b class="hotdeal_detail-line12">148,000</b>
+                    <p class="hotdeal_detail-line11">円</p>
+                    <small class="hotdeal_detail-line13">(税抜)</small>           
                 </div>
-                <div class="hotdeal_detail-line2">
-                    <img class="hotdeal_detail-line2img" src="img/hotdeal_plus.png">
-                    <div class="hotdeal_detail-line21">維持・管理費</div>
-                    <div class="hotdeal_detail-line22">月々</div>
-                    <div class="hotdeal_detail-line23">12,800</div>
-                    <div class="hotdeal_detail-line22">円</div>
-                    <div class="hotdeal_detail-line21">(税抜)</div>
+                <div class="hotdeal_detail-bottom">
+                    <div class="left">
+                        <img src="img/hotdeal_plus.png">
+                    </div>
+                <div class="right">
+                    <small >維持・管理費</small>
+                    <p >月々</p>
+                    <b >12,800</b>
+                    <p >円</p>
+                    <small >(税抜)</small>
+                </div>
                 </div>
                 <div class="hotdeal_detail-line3">
                     ご契約期間中は、印刷物の修正・増刷、

@@ -73,6 +73,19 @@ header{
     box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nav-toggle .bar {
+    width: 40px;
+    height: 3px;
+    background-color: #303030;
+    margin: 4px 0;
+    transition: 0.4s;
+}
 
 .blue-primary{
     color: #073880;
@@ -86,53 +99,74 @@ header{
     );
     background-size: 20px 20px;
 
-    
+    position: relative;
+}
+
+.introduce_img{
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    width: 592px;
+    height: 360px;
+}
+
+.introduce_talk{
+    position: absolute;
+    left: 0;
+    bottom: 74px;
 }
 
 .introduce_header{
     display: flex;
     align-items: flex-end;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.40);
+    padding-top: 30px;
+    padding-bottom: 42px;
+
 }
 
-.introduce_header-text1{
+.introduce_header-yellow{
     color: #FFF352;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.40);
-    font-family: "Noto Sans JP";
     font-size: 90px;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
 }
 
-.introduce_header-text2{
+.introduce_header-white{
     color: #FFF;
-    font-family: "Noto Sans JP";
     font-size: 60px;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
 }
 
-.introduce_list1 , .introduce_list2{
+.introduce_list{
     display: flex;
+    flex-wrap: wrap;
     margin-top: 24px;
     color: var(--__, #073880);
     font-size: 44px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
     gap: 30px;
 }
 
 .introduce_item{
     display: flex;
+    align-items: center;
     height: 56px;
     flex-shrink: 0;
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.15);
 }
 
 .introduce_item-content{
     background: #FFF;
-    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 20px 0 10px;
 }
 
 .introduce_item-img{
@@ -151,10 +185,15 @@ header{
 
 .problem{
     background-image: url("img/problem_image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .problem_header{
     padding-top: 60px;
+    padding-bottom: 48px;
     color: #FFF;
     text-align: center;
     font-size: 70px;
@@ -172,6 +211,11 @@ header{
 
 .problem_item{
     display: flex;
+}
+
+.problem_item .content{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .problem_item-image{
@@ -201,24 +245,19 @@ header{
     flex-shrink: 0;
     background-image: url('img/solution_image.png');
     background-size: cover;
-    background-position: center;
+    background-position: 50%;
+    position: relative;
 }
 
-.solution_header span{
-    color: var(--__, #073880);
-    text-align: center;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.solution_header .content{
+    position: absolute;
+    top: 42px;
+    left: 0;
+    right: 0;
 }
 
 .solution_header p{
     color: var(--__, #073880);
-    font-family: "Noto Sans JP";
     font-size: 60px;
     font-style: normal;
     font-weight: 900;
@@ -226,10 +265,15 @@ header{
     text-align: center;
 }
 
+.solution_header p span {
+    font-weight: 300;
+}
+
 .solution_list{
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+    margin-top: 40px;
 }
 
 .solution_item{
@@ -299,12 +343,14 @@ header{
     align-items: center;
     gap: 56px;
     z-index: -1;
+    padding-top: 22px;
 }
 
 .pricing_img-triangle{
     position: absolute;
-    left: 40%;
-    top: 194px;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: -1;
 }
 
@@ -352,9 +398,13 @@ th, td {
     background: var(--base_gry, #303030);
 }
 
+td{
+    padding: 0 48px 0 48px;
+}
+
 .pricing_warning{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -365,8 +415,8 @@ th, td {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
-    height: 5px; /* Độ dày của gạch chân */
+    bottom: -3px;
+    height: 10px; /* Độ dày của gạch chân */
     width: 100%;
     background-color: #000; /* Màu sắc của gạch chân */
 }
@@ -405,6 +455,7 @@ th, td {
     font-weight: 700;
     line-height: 70px; /* 116.667% */
     margin-bottom: 34.5px;
+    margin-top: 10px;
 }
 
 .pricing_talk{
@@ -415,7 +466,6 @@ th, td {
 .pricing_talk-bg{
     width: 100%;
     max-width: 1440px;
-    padding-bottom: 120px;
 }
 
 .pricing_talk-item{
@@ -440,37 +490,37 @@ th, td {
 .talk-item1{
     position: absolute;
     top: 16px;
-    left: 100px;
+    left: 13.8%;
 }
 
 .talk-item2{
     position: absolute;
     top: 283px;
-    left: 0px;
+    left: 6.6%;
 }
 
 .talk-item3{
     position: absolute;
     top: 553px;
-    left: 128px;
+    left: 15.2%;
 }
 
 .talk-item4{
     position: absolute;
     top: 0;
-    left: 694px;
+    right: 20%;
 }
 
 .talk-item5{
     position: absolute;
     top: 203px;
-    left: 866px;
+    right: 8.6%;
 }
 
 .talk-item6{
     position: absolute;
     top: 497px;
-    left: 787px;
+    right: 17%;
 }
 
 .talk-item4, .talk-item5, .talk-item6{
@@ -505,13 +555,27 @@ th, td {
     background-image: url('img/solution_image.png');
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
-.hotdeal_header-line2{
+
+
+.hotdeal_header .content{
+    position: absolute;
+    top: 32px;
+    left: 0;
+    right: 0;
+}
+
+
+.hotdeal_header-bottom{
     display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
-.hotdeal_header1{
+.hotdeal_header-top p, 
+.hotdeal_header-bottom p{
     color: var(--__, #073880);
     text-align: center;
     font-size: 60px;
@@ -520,7 +584,7 @@ th, td {
     line-height: normal;
 }
 
-.hotdeal_header2{
+.hotdeal_header-bottom span{
     color: var(--__, #073880);
     font-size: 80px;
     font-style: normal;
@@ -528,7 +592,7 @@ th, td {
     line-height: normal;
 }
 
-.hotdeal_header3{
+.hotdeal_header-bottom b{
     color: var(--__, #073880);
     font-size: 80px;
     font-style: normal;
@@ -552,6 +616,7 @@ th, td {
 .hotdeal_description-line2{
     display: flex;
     justify-content: center;
+    padding-bottom: 32px;
 }
 
 .hotdeal_description2{
@@ -569,88 +634,85 @@ th, td {
     z-index: 1;
 }
 
-.hotdeal_detail-line1{
+.hotdeal_detail-top{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-end;
-    position: relative;
     margin-left: 76px;
     margin-right: 76px;
     z-index: 1;
+    background: linear-gradient(180deg, transparent 80%, #FFF352 60%);
+    margin-top: 70px;
 }
 
-.hotdeal_detail-line1::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 30px;
-    height: 39px; /* Độ dày của gạch chân */
-    width: 100%;
-    background-color: #FFF352; /* Màu sắc của gạch chân */
-    z-index: -1;
-}
-
-.hotdeal_detail-line11{
-    padding-bottom: 30px;
+.hotdeal_detail-top p{
     color: var(--CTA, #E8383D);
     text-align: center;
     font-size: 70px;
     font-style: normal;
     font-weight: 900;
-    line-height: normal;
+    line-height: 1;
 }
 
-.hotdeal_detail-line12{
+.hotdeal_detail-top b{
     color: var(--CTA, #E8383D);
     font-size: 160px;
     font-style: normal;
     font-weight: 900;
-    line-height: normal;
+    line-height: 1;
 }
 
-.hotdeal_detail-line13{
-    padding-bottom: 30px;
+.hotdeal_detail-top small{
     color: var(--CTA, #E8383D);
     font-size: 45px;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    line-height: 1;
 }
 
-.hotdeal_detail-line2{
+.hotdeal_detail-bottom{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
-.hotdeal_detail-line2img{
+.hotdeal_detail-bottom .right{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: 56px;
+    background: linear-gradient(180deg, transparent 80%, #FFF352 60%);
+}
+
+.hotdeal_detail-bottom img{
     height: 100px;
     width: 100px;
 }
 
-.hotdeal_detail-line21{
+.hotdeal_detail-bottom small{
     color: var(--__, #073880);
     text-align: center;
     font-size: 40px;
     font-style: normal;
     font-weight: 500;
-    line-height: 100%; /* 40px */
+    line-height: 1; /* 40px */
 }
 
-.hotdeal_detail-line22{
+.hotdeal_detail-bottom p{
     color: var(--__, #073880);
     font-size: 50px;
     font-style: normal;
     font-weight: 500;
-    line-height: 100%;
+    line-height: 1;
 }
 
-.hotdeal_detail-line23{
+.hotdeal_detail-bottom b{
     color: var(--__, #073880);
     font-size: 80px;
     font-style: normal;
     font-weight: 500;
-    line-height: 100%;
+    line-height: 1;
 }
 
 .hotdeal_detail-line3{
@@ -660,6 +722,7 @@ th, td {
     font-style: normal;
     font-weight: 900;
     line-height: normal;
+    padding-bottom: 64px;
 }
 
 .hotdeal_footer{
@@ -698,7 +761,6 @@ th, td {
 .procedure_item{
     display: flex;
     background-color: white;
-    width: 1200px;
     height: 144px;
     position: relative;
     z-index: 1;
@@ -735,8 +797,6 @@ th, td {
 
 .procedure_item-symbol img{
     z-index: 1;
-    width: 40%;
-    height: 40%;
 }
 
 .procedure_item-detail{
@@ -892,3 +952,53 @@ th, td {
 footer{
     background-color: #00A5C7;
 }
+
+@media (max-width: 768px) {
+    .nav{
+        justify-content: space-around;
+    }
+
+    .nav_button {
+        display: none;
+    }
+
+    .nav_header{
+        display: none;
+    }
+    
+    .nav_header.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        transform: translateX(-50%);
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 10px);
+    }
+
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -10px);
+    }
+
+    .introduce_header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .solution_footer{
+        flex-direction: column;
+    }
+  }
